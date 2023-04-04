@@ -1,5 +1,3 @@
 # C-Sharp-Ransomware
 
-Version 1 just encrypted the files without a password and it had no decryption function
-
-Update references for the other ones coming out soon
+A C# Ransomware Project that I started, and I even have the different versions as I go along! :)
