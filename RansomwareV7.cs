@@ -41,12 +41,12 @@ namespace Ransomware
 
                 if (!passwordMatched)
                 {
-                    Console.WriteLine("Incorrect password. Please try again.");
+                    Console.WriteLine("Incorrect password! Please try again.");
                     Console.ReadLine();
                 }
             }
 
-            Console.WriteLine("All files have been decrypted.");
+            Console.WriteLine("All files have been successfully decrypted.");
             Console.ReadLine();
         }
 
@@ -82,7 +82,7 @@ namespace Ransomware
                 }
                 else
                 {
-                    Console.WriteLine("\nCannot close window. Enter the password: ");
+                    Console.WriteLine("\nCannot close window! Enter the password: ");
                 }
             }
 
