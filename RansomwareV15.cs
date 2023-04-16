@@ -303,7 +303,7 @@ namespace Ransomware
             File.Delete(inputFile);
         }
         static bool DecryptFile(string inputFile, string password)
-    {
+        {
           if (!inputFile.EndsWith(".encrypted"))
           {
               return false;
